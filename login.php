@@ -50,7 +50,7 @@
         // Check if the query was successful
         if ($result && $result->num_rows > 0) {
             // Redirect to homepage
-            header("Location: upload.php");
+            header("Location: test.php");
             exit();
         } else {
             echo '<script>alert("Invalid username or password. Please try again.");</script>';
