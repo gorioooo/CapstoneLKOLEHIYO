@@ -2,7 +2,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "student_database";
+$dbname = "add_student";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
@@ -15,13 +15,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $id_number = $_POST["id_number"];
     $email = $_POST["email"];
     $strand = $_POST["strand"];
-    $grade_level = $_POST["grade_level"];
-    $section = $_POST["section"];
+    $grade_section = $_POST["grade_section"];
     $username = $_POST["username"];
     $password = $_POST["password"];
 
-    $sql = "INSERT INTO students (name, id_number, email, strand, grade_level, section, username, password)
-            VALUES ('$name', '$id_number', '$email', '$strand', $grade_level, '$section', '$username', '$password')";
+    $sql = "INSERT INTO `student`(`name`, `id_number`, `email`, `strand`, `grade_section`, `username`, `password`) 
+        VALUES ('$name', '$id_number', '$email', '$strand', '$grade_section', '$username', '$password')";
 
     if ($conn->query($sql) === TRUE) {
         echo "Student added successfully!";
